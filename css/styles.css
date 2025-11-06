@@ -1,0 +1,167 @@
+/* ==========================================================================
+   CSS VARIABLES & RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*BODY FORMATTING*/
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/* ==========================================================================
+   BENTO BOX LAYOUT
+   ========================================================================== */
+
+/*Format section container*/
+.features {
+  text-align: center;
+  margin: 20px;
+}
+
+/*Format svg icon*/
+svg {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+/*Format section title*/
+.site-title {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+/*Format site text*/
+.section-text {
+  margin-bottom: 40px;
+}
+
+.section-text,
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #52525a;
+}
+
+/*Format grid container*/
+.grid-container {
+  background-color: #f3f4f6;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 1em;
+}
+
+/*Format grid items*/
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 32px;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*Format item info heading*/
+.item-info h2 {
+  margin-bottom: 12px;
+}
+
+/*Format grid img*/
+.item-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-img-container img {
+  max-width: 100%;
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/*Tablet Media Query*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*Format features section*/
+  .features {
+    margin: 40px;
+  }
+
+  /*Format grid container*/
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 40px;
+  }
+
+  /*Format second grid item*/
+  .grid-container .grid-item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  /*Format grid items*/
+  .grid-container .grid-item:nth-child(3),
+  .grid-container .grid-item:nth-child(4),
+  .grid-container .grid-item:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  /*Format odd and even rows*/
+  .even,
+  .odd {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  /*Format even row*/
+  .even {
+    flex-direction: row-reverse;
+  }
+}
+
+/*Desktop media query*/
+@media screen and (min-width: 1025px) {
+  .features {
+    margin: 40px;
+  }
+
+  /*Format grid container*/
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*Format second item*/
+  .grid-container .grid-item:nth-child(2) {
+    flex-direction: column-reverse;
+    justify-items: center;
+  }
+
+  /*Format last two items*/
+  .grid-container .grid-item:nth-child(4),
+  .grid-container .grid-item:nth-child(5) {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  /*Format images*/
+  .grid-container .grid-item:nth-child(4) .item-img-container img,
+  .grid-container .grid-item:nth-child(5) .item-img-container img {
+    width: 50%;
+    height: auto;
+  }
+}
